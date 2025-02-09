@@ -1,0 +1,26 @@
+<div class="modal fade" id="createBuildingModal" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content custom-modal">
+            <div class="modal-header border-0">
+                <h5 class="modal-title">Create Building</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" (click)="resetForm()"></button>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <div class="mb-3">
+                        <label for="schoolSelect" class="form-label">Schools</label>
+                        <select class="form-select"  [(ngModel)]="newbuilding.school" name="schoolSelect">
+                            <option value="1">School 1</option>
+                            <option value="2">School 2</option>
+                        </select>
+                    </div>
+                    <div class="mb-3">
+                        <label for="buildingName" class="form-label">Building Name</label>
+                        <input type="text" class="form-control" placeholder="Enter Building Name" [(ngModel)] = "newbuilding.building" name="building" >
+                    </div>
+                    <button type="submit" class="btn btn-submit" data-bs-dismiss="modal" (click)="save()" >Submit</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

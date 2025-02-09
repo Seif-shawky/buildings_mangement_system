@@ -1,0 +1,37 @@
+<app-create-building-modal (buildingadded)="add($event)">
+    
+</app-create-building-modal>
+
+<div
+    class="table-responsive container mt-4"
+>
+    <table
+        class="table custom-table"
+    >
+        <thead>
+            <tr>
+                <th scope="col"><input type="checkbox" (change)="toggleAll()"  [checked] = "allSelected"></th>
+
+                <th scope="col">ID</th>
+                <th scope="col">Building Name</th>
+                <th scope="col">School</th>
+                <th scope="col">Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let building of buildings">
+
+                <td><input type="checkbox" [(ngModel)] = "building.selected"></td>
+                <td><strong>#{{ building.id}}</strong></td>
+                <td>{{building.building}}</td>
+                <td>School {{building.school}}</td>
+
+                <td class="actions">
+                    <button class="btn btn-sm"><i class="bi bi-trash" (click)="deleteBuilding(building.id)"></i></button>
+                    <button class="btn btn-sm"><i class="bi bi-pen"></i> </button>
+                    <button class="btn btn-sm"><i class="bi bi-eye"></i> </button>
+                </td>
+            
+        </tbody>
+    </table>
+</div>
