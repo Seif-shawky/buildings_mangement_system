@@ -1,0 +1,43 @@
+{
+  "schools": [
+    {
+      "id": 1,
+      "name": "School 1"
+    },
+    {
+      "id": 2,
+      "name": "School 2"
+    }
+  ],
+  "buildings": [
+    {
+      "id": 1,
+      "name": "Building A",
+      "schoolId": 1,
+      "floors": [1, 2]
+    },
+    {
+      "id": 2,
+      "name": "Building B",
+      "schoolId": 2,
+      "floors": [3]
+    }
+  ],
+  "floors": [
+    {
+      "id": 1,
+      "name": "Floor 1",
+      "buildingId": 1
+    },
+    {
+      "id": 2,
+      "name": "Floor 2",
+      "buildingId": 1
+    },
+    {
+      "id": 3,
+      "name": "Floor 1",
+      "buildingId": 2
+    }
+  ]
+}

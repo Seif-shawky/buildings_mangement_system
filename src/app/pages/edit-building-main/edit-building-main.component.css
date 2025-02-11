@@ -1,0 +1,8 @@
+ .add-floor {
+    border: 2px solid #fa7206; 
+    color: #fa7206;
+    background-color: #fa7206;
+    font-weight: bold;
+    border-radius: 8px;
+    padding: 8px 15px;
+}

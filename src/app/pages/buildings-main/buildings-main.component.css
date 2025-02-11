@@ -1,0 +1,33 @@
+ .create-btn {
+    border: 2px solid #fa7206; 
+    color: #fa7206;
+    background-color: transparent;
+    font-weight: bold;
+    border-radius: 8px;
+    padding: 8px 15px;
+}
+.search-btn{
+    border: 3px solid #cfd1d7;
+    color: #9d9ea2; 
+    background-color: #e8e9ec;
+    font-weight: bold;
+    border-radius: 8px;
+    padding: 10px;
+}
+.search-btn:hover {
+ background-color: #9d9ea2;
+    color: white;
+}
+
+.create-btn:hover {
+    background-color: #fa7206
+;
+    color: white;
+}
+
+.search-input {
+    border: 2px solid #cfd1d7;
+    border-radius: 8px;
+    padding: 6px 12px;
+    width: 200px;
+}

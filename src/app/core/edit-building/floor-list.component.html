@@ -1,0 +1,31 @@
+<div class="mt-4">
+    <h4 class="fw-bold">Grade Levels</h4>
+    <table class="custom-table table table-striped table-hover table-borderless table-primary align-middle">
+        <thead class="table-light">
+            <tr>
+                <th scope="col"><input type="checkbox" [checked]="allSelected"></th>
+                <th>ID</th>
+                <th>Floors Name</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody class="table-group-divider">
+         <tr *ngFor="let floor of floors">
+                <td><input type="checkbox"></td>
+                <td><strong>#{{floor.id}}</strong></td>
+                <td><strong>{{floor.floorName}}</strong></td>
+                <td class="actions">
+                    <button class="btn btn-sm text-danger">
+                        <i class="bi bi-trash"></i>
+                    </button>
+                    <button class="btn btn-sm text-primary">
+                        <i class="bi bi-pen"></i>
+                    </button>
+                    <button class="btn btn-sm text-secondary">
+                        <i class="bi bi-eye"></i>
+                    </button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
