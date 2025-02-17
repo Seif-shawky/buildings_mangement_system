@@ -82,9 +82,8 @@
   margin-top: 20px;
   font-weight: bold;
 }
-/* #pdfContent {
+#pdfContent {
   position: absolute;
   top: -9999px;
   left: -9999px;
-  visibility: hidden;
-} */
+}
