@@ -2,14 +2,14 @@
     <form>
         <div class="mb-3">
             <label for="schoolSelect" class="form-label">Schools</label>
-            <select class="form-select" [(ngModel)]="newbuilding.school" name="schoolSelect">
+            <select class="form-select" [(ngModel)]="newBuilding.schoolId" name="schoolSelect">
                 <option value="1">School 1</option>
                 <option value="2">School 2</option>
             </select>
         </div>
         <div class="mb-3">
             <label for="buildingName" class="form-label">Building Name</label>
-            <input type="text" class="form-control" placeholder="Enter Building Name" [(ngModel)]="newbuilding.building"
+            <input type="text" class="form-control" placeholder="Enter Building Name" [(ngModel)]="newBuilding.name"
                 name="building">
         </div>
         <button type="submit" class="btn btn-submit" data-bs-dismiss="modal" (click)="save()">Submit</button>

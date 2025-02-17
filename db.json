@@ -1,0 +1,83 @@
+{
+  "schools": [
+    {
+      "id": "1",
+      "name": "School 1",
+      "buildings": [
+        1,
+        2
+      ]
+    },
+    {
+      "id": "2",
+      "name": "School 2",
+      "buildings": [
+        3
+      ]
+    }
+  ],
+  "buildings": [
+    {
+      "id": "1",
+      "name": "Building ",
+      "schoolId": "1",
+      "floors": [
+        3,
+        4,
+        5
+      ]
+    },
+    {
+      "id": "2",
+      "name": "Building seif 1",
+      "schoolId": "2",
+      "floors": [
+        3,
+        4,
+        5
+      ]
+    },
+    {
+      "id": "3",
+      "name": "Building seif",
+      "schoolId": 2,
+      "floors": [
+        3,
+        4,
+        5
+      ]
+    }
+  ],
+  "floors": [
+    {
+      "id": "1",
+      "name": "Floor 1",
+      "buildingId": 1
+    },
+    {
+      "id": "2",
+      "name": "Floor 2",
+      "buildingId": 1
+    },
+    {
+      "id": "3",
+      "name": "Floor 1",
+      "buildingId": 2
+    },
+    {
+      "id": "4",
+      "name": "Floor 2",
+      "buildingId": 2
+    },
+    {
+      "id": "5",
+      "name": "Floor 3",
+      "buildingId": 2
+    },
+    {
+      "id": "6",
+      "name": "Floor 1",
+      "buildingId": 3
+    }
+  ]
+}

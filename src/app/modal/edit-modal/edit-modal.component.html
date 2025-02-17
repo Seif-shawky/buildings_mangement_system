@@ -1,0 +1,20 @@
+<app-reusable-modal modalId="editBuildingModal" title="Edit Building">
+    <form #buildingForm="ngForm">
+        <div class="mb-3">
+            <label for="schoolSelect" class="form-label">Schools</label>
+            <select class="form-select" [(ngModel)]="editedBuilding.schoolId" name="schoolSelect">
+                <option *ngFor="let school of schools" [value]="school.id">{{ school.name }}</option>
+                                <option value="1">School 1</option>
+                                <option value="2">School 2</option>
+            </select>
+        </div>
+        <div class="mb-3">
+            <label for="buildingName" class="form-label">Building Name</label>
+            <input type="text" class="form-control" placeholder="Enter Building Name" [(ngModel)]="editedBuilding.name"
+                name="building">
+        </div>
+        <button type="submit" class="btn btn-submit" data-bs-dismiss="modal" (click)="save()">
+            Save Changes
+        </button>
+    </form>
+</app-reusable-modal>

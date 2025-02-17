@@ -1,6 +1,6 @@
 import { Routes } from '@angular/router';
 import { BuildingsMainComponent } from './pages/buildings-main/buildings-main.component';
-import { EditBuildingComponent } from './core/edit-building/floor-list.component';
+import { EditBuildingComponent } from './core/floor-list/floor-list.component';
 import { EditBuildingMainComponent } from './pages/edit-building-main/edit-building-main.component';
 import { CreateFloorModalComponent } from './modal/add-floor-modal/add-floor-modal.component';
 

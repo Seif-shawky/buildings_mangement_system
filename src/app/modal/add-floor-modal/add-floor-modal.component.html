@@ -3,8 +3,13 @@
         <div class="mb-3">
             <label for="floorName" class="form-label">Enter Floor Name</label>
             <input type="text" class="form-control" id="floorName" placeholder="Enter Floor Name"
-                [(ngModel)]="floorName" name="floorName" required>
+                [(ngModel)]="newFloor.name" name="floorName" required>
         </div>
-        <button type="button" class="btn btn-submit" (click)="save()">Submit</button>
+        <div class="mb-3">
+            <label for="floorName" class="form-label">Enter Building Id</label>
+            <input type="text" class="form-control" id="floorID" placeholder="Enter Building ID"
+                [(ngModel)]="newFloor.buildingId" name="floorid" required>
+        </div>
+        <button type="button" class="btn btn-submit" data-bs-dismiss="modal" (click)="save()">Submit</button>
     </form>
 </app-reusable-modal>

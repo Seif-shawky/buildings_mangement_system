@@ -1,13 +1,8 @@
-<div
-    class="table-responsive mt-4" 
->
-    <table
-        class=" custom-table table table-striped table-hover table-borderless table-primary align-middle"
-    >
+<div class="table-responsive mt-4">
+    <table class="custom-table table table-striped table-hover table-borderless table-primary align-middle">
         <thead class="table-light">
             <tr>
-                <th scope="col"><input type="checkbox" (change)="toggleAll()" [checked]="allSelected"></th>
-
+                <th scope="col"><input type="checkbox"></th>
                 <th>ID</th>
                 <th>Building Name</th>
                 <th>School</th>
@@ -15,22 +10,81 @@
             </tr>
         </thead>
         <tbody class="table-group-divider">
-    <tr *ngFor="let building of buildings">
-        <td><input type="checkbox" [(ngModel)]="building.selected"></td>
-        <td><strong>#{{ building.id}}</strong></td>
-        <td>{{building.building}}</td>
-        <td>School {{building.school}}</td>
-    
-        <td class="actions">
-            <button class="btn btn-sm"><i class="bi bi-trash" (click)="deleteBuilding(building.id)"></i></button>
-            <button class="btn btn-sm"><i class="bi bi-pen" (click)="editbuilding(building.id)"></i> </button>
-            <button class="btn btn-sm"><i class="bi bi-eye"></i> </button>
-        </td>
+            <tr *ngFor="let building of buildings" [class.selected]="selectedBuilding?.id === building.id">
+                <td><input type="checkbox"></td>
+                <td><strong>#{{ building.id }}</strong></td>
+                <td>{{ building.name }}</td>
+                <td>School {{ building.schoolId }}</td>
+                <td class="actions">
+                    <button class="btn btn-sm" (click)="deleteBuilding(building.id)">
+                        <i class="bi bi-trash"></i>
+                    </button>
+                    <button class="btn btn-sm" data-bs-toggle="modal" data-bs-target="#editBuildingModal"
+                        (click)="openEditModal(building)">
+                        <i class="bi bi-pen"></i>
+                    </button>
+                    <button class="btn btn-sm"><i class="bi bi-eye" (click)="openFloorPage(building.id)"></i> </button>
+
+                </td>
+            </tr>
         </tbody>
-        <tfoot>
-            
-        </tfoot>
     </table>
 </div>
 
-<app-create-building-modal (buildingadded)="add($event)"></app-create-building-modal>
+<app-create-building-modal (buildingAdded)="add($event)"></app-create-building-modal>
+
+<!-- Edit Modal: Always shown, but changes when clicking the edit button -->
+<app-edit-modal [building]="selectedBuilding" (buildingUpdated)="updateBuilding($event)">
+</app-edit-modal>
+
+
+<div class="pdf-template" id="pdfContent">
+    <div class="header">
+        <div class="brand">
+            <h2 class="brand-name">BRAND <span>NAME</span></h2>
+            <p class="tagline">Tagline Here</p>
+        </div>
+        <div class="contact-info">
+            <p>📞 000-000-0000</p>
+            <p>✉️ </p>
+            <p>🌐 www.website.com</p>
+            <p>📍 Street Address</p>
+        </div>
+    </div>
+
+    <hr class="divider" />
+
+    <div class="letter-content">
+        <p><strong>To:</strong> <span class="recipient-name">Your Name</span></p>
+        <p><strong>Director</strong></p>
+        <p>Date: {{ currentDate }}</p>
+
+        <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam euismod tincidunt...
+        </p>
+
+        <div class="table-container">
+            <table class="custom-table">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Building Name</th>
+                        <th>School</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let building of buildings">
+                        <td>{{ building.id }}</td>
+                        <td>{{ building.name }}</td>
+                        <td>School {{ building.schoolId }}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <p class="signature">
+            <strong>Your Name</strong> <br />
+            <em>Director</em>
+        </p>
+    </div>
+</div>

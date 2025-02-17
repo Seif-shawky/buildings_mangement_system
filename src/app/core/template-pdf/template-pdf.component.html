@@ -1,0 +1,50 @@
+<div class="pdf-template" id="pdfContent">
+    <div class="header">
+        <div class="brand">
+            <h2 class="brand-name">BRAND <span>NAME</span></h2>
+            <p class="tagline">Tagline Here</p>
+        </div>
+        <div class="contact-info">
+            <p>📞 000-000-0000</p>
+            <p>✉️ </p>
+            <p>🌐 www.website.com</p>
+            <p>📍 Street Address</p>
+        </div>
+    </div>
+
+    <hr class="divider" />
+
+    <div class="letter-content">
+        <p><strong>To:</strong> <span class="recipient-name">Your Name</span></p>
+        <p><strong>Director</strong></p>
+        <p>Date: {{ currentDate }}</p>
+
+        <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam euismod tincidunt...
+        </p>
+
+        <div class="table-container">
+            <table class="custom-table">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Building Name</th>
+                        <th>School</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let building of buildings">
+                        <td>{{ building.id }}</td>
+                        <td>{{ building.name }}</td>
+                        <td>School {{ building.schoolId }}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <p class="signature">
+            <strong>Your Name</strong> <br />
+            <em>Director</em>
+        </p>
+    </div>
+</div>

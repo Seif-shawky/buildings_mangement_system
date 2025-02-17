@@ -24,18 +24,20 @@
     </div>
 
     <!-- Building Information -->
-    <div class="card mt-3 p-3">
-        <div class="row">
-            <div class="col-md-6">
-                <label class="fw-bold">Building Name:</label>
-                <span class="ms-2">{{ buildings.building }}</span>
-            </div>
-            <div class="col-md-6">
-                <label class="fw-bold">School:</label>
-                <span class="ms-2">{{ buildings.school }}</span>
-            </div>
+<!-- Building Information -->
+<div class="card mt-3 p-3">
+    <div class="row">
+        <div class="col-md-6">
+            <label class="fw-bold">Building Name:</label>
+            <span class="ms-2">{{ building?.name }}</span> <!-- Display building name -->
+        </div>
+        <div class="col-md-6">
+            <label class="fw-bold">School:</label>
+            <span class="ms-2">{{ school?.name || 'Unknown School' }}</span> <!-- Display school name -->
         </div>
     </div>
+</div>
+
 
     <!-- Edit Building Component -->
     <app-edit-building></app-edit-building>
